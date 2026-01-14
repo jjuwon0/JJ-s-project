@@ -6,12 +6,17 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
     [Header("공격 설정")]
-    [SerializeField] private float attackRange = 2f; // 공격 범위
+    [SerializeField] private float attackRange = 10f; // 공격 범위
     [SerializeField] private float attackCooldown = 0.5f; // 공격 쿨타임
     [SerializeField] private LayerMask enemyLayer; // 적 레이어 (나중에 설정)
 
+    [Header("자동 전투")]
+    [SerializeField] private bool autoAttack = false; // 자동 전투 ON/OFF
+
     private PlayerStats playerStats;
     private float lastAttackTime = 0f;
+
+    public bool AutoAttack => autoAttack;
 
     void Start()
     {
@@ -20,11 +25,41 @@ public class PlayerCombat : MonoBehaviour
 
     void Update()
     {
-        // 스페이스바를 누르면 공격
+        // 수동 공격 - 스페이스바를 누르면 공격
         if (Input.GetKeyDown(KeyCode.Space))
         {
             TryAttack();
         }
+
+        // 자동 전투가 켜져 있으면 자동으로 공격
+        if (autoAttack)
+        {
+            TryAttack();
+        }
+
+        // T 키로 자동 전투 ON/OFF
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            ToggleAutoAttack();
+        }
+    }
+
+    /// <summary>
+    /// 자동 전투 토글
+    /// </summary>
+    public void ToggleAutoAttack()
+    {
+        autoAttack = !autoAttack;
+        Debug.Log($"자동 전투: {(autoAttack ? "ON" : "OFF")}");
+    }
+
+    /// <summary>
+    /// 자동 전투 설정
+    /// </summary>
+    public void SetAutoAttack(bool value)
+    {
+        autoAttack = value;
+        Debug.Log($"자동 전투: {(autoAttack ? "ON" : "OFF")}");
     }
 
     /// <summary>
