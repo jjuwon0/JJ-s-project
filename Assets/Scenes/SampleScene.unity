@@ -4001,9 +4001,17 @@ PrefabInstance:
       value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 7693752716142862360, guid: a5120cfb743315e4fb2812a8dd410573, type: 3}
+      propertyPath: m_Size.x
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 7693752716142862360, guid: a5120cfb743315e4fb2812a8dd410573, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7693752716142862360, guid: a5120cfb743315e4fb2812a8dd410573, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: -7279699070808662680, guid: fc15f0143a573f74da2bb117486d3973, type: 3}
     - target: {fileID: 7693752716142862360, guid: a5120cfb743315e4fb2812a8dd410573, type: 3}
       propertyPath: m_Color.b
       value: 0.990566
@@ -4018,7 +4026,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7693752716142862360, guid: a5120cfb743315e4fb2812a8dd410573, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4043,7 +4051,7 @@ Animator:
   m_GameObject: {fileID: 4001095245912187149}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b87f08a8949ed834780751e302e13495, type: 2}
+  m_Controller: {fileID: 9100000, guid: 466b2758e0774b94fbcd0caa2fd4fb6a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
